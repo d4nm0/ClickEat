@@ -1,0 +1,53 @@
+<h1>Unicorn Website For technic test</h1>
+
+<button class="btn btn-dark" (click)="OpenCreateUnicornModal()">create a unicorn</button>
+<button class="btn btn-dark" (click)="OpenCreateBabyUnicorn()">create baby Unicorn</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="5">list of Unicorn</th>
+    </tr>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Color</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Age</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let unicorn of currentUnicornListJson">
+      <td>{{unicorn.name}}</td>
+      <td><span class="dot" [ngStyle]="{'background-color':unicorn.color}"></span>{{unicorn.color}}</td>
+      <td>{{unicorn.gender}}</td>
+      <td>{{unicorn.age}}</td>
+      <td><button [disabled]="MyMateList.length >= 2" class="btn btn-dark"  (click)="addToMate(unicorn)" >Add To Mate</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="5">My Mate</th>
+    </tr>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Color</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let unicornMate of MyMateList">
+      <td>{{unicornMate.name}}</td>
+      <td><span class="dot" [ngStyle]="{'background-color':unicornMate.color}"></span>{{unicornMate.color}}</td>
+      <td>{{unicornMate.gender}}</td>
+      <td>{{unicornMate.age}}</td>
+    </tr>
+  </tbody>
+</table>
+
+

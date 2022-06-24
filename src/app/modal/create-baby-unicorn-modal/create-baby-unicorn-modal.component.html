@@ -1,0 +1,15 @@
+
+<select  required  [(ngModel)]='UnicornMale' name="dropdownOption" id="dropdownOption" class='form-control'>
+  <option value="" disabled>Select Male</option>
+  <ng-container *ngFor="let item of currentUnicornListJson" >
+    <option *ngIf="item.gender == 'male'"  value="{{item.name}},{{item.color}}">{{item.name}}</option>
+  </ng-container>
+</select>
+<select   required  [(ngModel)]='UnicornFemale' name="dropdownOption" id="dropdownOption" class='form-control'>
+  <option value="" disabled>Select Female</option>
+  <ng-container *ngFor="let item of currentUnicornListJson" >
+    <option *ngIf="item.gender == 'female'"  value="{{item.name}},{{item.color}}">{{item.name}}</option>
+  </ng-container>
+</select>
+<button class="btn btn-dark"  (click)="makeBabyUnicorn(UnicornFemale,UnicornMale)">make Baby</button>
+<button class="btn btn-dark"  (click)="modalService.close('Close');">Close</button>

@@ -1,0 +1,18 @@
+
+<input  required  type="text" placeholder="name" [(ngModel)]="name" class='form-control' id="name"/>
+<!-- <input  required  type="text" placeholder="color in hex code" [(ngModel)]="color" maxlength="6" size="6" class='form-control'/> -->
+<label for="picker" style="width: 100%;">
+  <input class="form-control" style="width: 100%;" type="color" name="" id="picker" value="" [(ngModel)]="color"/>
+</label>
+<!-- <input type="text" placeholder="gender" [(ngModel)]="gender"/> -->
+<select  required  [(ngModel)]='gender' name="dropdownOption" id="dropdownOption" class='form-control'>
+  <option value="" disabled>Select gender</option>
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+  <option value="other">Other</option>
+  </select>
+<input  required  type="number" placeholder="age" [(ngModel)]="age" class='form-control'/>
+
+<button class="btn btn-dark"  (click)="addUnicorn()">Add Unicorn</button>
+<button class="btn btn-dark"  (click)="modalService.close('Close');">Close</button>
+
